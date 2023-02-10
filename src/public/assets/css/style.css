@@ -1,0 +1,92 @@
+body {
+  background-image: url(../images/IMG_5453.JPG);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  filter: opacity(100%);
+  font-family: "Cormorant Garamond Light 300", serif;
+  padding-top: 60px;
+}
+
+img {
+  filter: opacity(100%);
+}
+
+#topheader {
+  justify-content: center;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.favespot__title {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.favespot__description {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.favespot__adress {
+  font-size: 10px;
+}
+
+.favspotstockholmInput__name {
+  font-size: 12px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.favspotstockholmInput__description {
+  font-size: 12px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.favspotstockholmInput__adress {
+  font-size: 12px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+#getListContainer {
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+#getUpdatedListContainer {
+  padding: 50px;
+}
+
+#getListButton {
+  padding: 20px;
+}
+
+#addForm {
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    filter: opacity(100%);
+    font-family: "Cormorant Garamond Light 300", serif;
+  }
+}

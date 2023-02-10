@@ -1,0 +1,7 @@
+.env
+node_modules
+
+#kanske dessa?
+#DS_STORE
+#.parcel-cache 
+#dist

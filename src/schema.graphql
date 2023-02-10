@@ -1,0 +1,51 @@
+#Så här ska vårt API se ut, denna info tar Apollo och skapar ett GraphQL-API åt oss.
+#Resolvers skickas också till Apollo Server, vi skriver logiken i resolvers som utför det vi sagt ska utföras i vårt schema
+#När användaren/jag via front end getAllFavoriteSpots kommer de få array med favoritespots tillbaka
+#Resolvern uppfyller löftet det vi sagt att vi ska göra i schemat, här skrivs logiken
+#Hur den uppfyller via sheetDB/lokala filer/databas är upp till resolvern
+#Alla resolver kan göra olika, en till sheetDB/en databas/en till
+#ApolloServer skapar en server som kan ta emot request som matchar ett GraphQL-API
+#Apollo säger att det ska göras och vad som ska köras - mellanhand!
+#Alla API mellanhand, i detta fall ApolloServer mellan request och vad personen gör och mina resolvers
+#Vi har byggt OmdbApi/Starwars-api:et (rest/graphql mellanhand mellan databasen och mig)
+#I detta fall är datan sheetDB, min front end kan inte nå sheetdb, så då kör vi graphQL-API
+#Apolloserver är bara ett verktyg som hanterar alla requests som vi skapar i våra resolvers
+
+#Bygga hus: schema är vårt ritning för huset, resolvers är logiken bakom snickaren, elektrikern, rörmokaren (instruktionerna/kod, de kan logiken för hur saker ska göras)
+#ApolloServer är byggledaren som slår ihop delarna och bygger interfaces utifrån vårt schema och resolvers.
+
+#GraphQL/Rest bygger API:et som kan kommunicera med andra apier eller databaser.
+
+type FavoriteSpotStockholm {
+  id: ID
+  name: String!
+  description: String!
+  adress: String!
+}
+
+type DeletedFavoriteSpot {
+  deletedId: ID
+  success: Boolean
+}
+
+type Query {
+  # getFavoriteSpotById(id: ID!): FavoriteSpotStockholm
+  getAllFavoriteSpots: [FavoriteSpotStockholm]
+}
+
+type Mutation {
+  createFavoriteSpot(input: CreateFavoriteSpotInput): FavoriteSpotStockholm
+  deleteFavoriteSpot(favespotId: ID!): DeletedFavoriteSpot
+  # updateFavoriteSpot(
+  #   id: ID!
+  #   name: String!
+  #   description: String
+  #   adress: String
+  # ): FavoriteSpotStockholm
+}
+
+input CreateFavoriteSpotInput {
+  name: String!
+  description: String!
+  adress: String!
+}
